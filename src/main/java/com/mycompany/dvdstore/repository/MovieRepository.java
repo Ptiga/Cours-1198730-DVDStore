@@ -9,7 +9,7 @@ public class MovieRepository {
 
     private static List<Movie> listeFilms = new ArrayList<>();
 
-    public void addToList (Movie movie){
+    public void addMovie(Movie movie){
         listeFilms.add(movie);
         System.out.println("Le film " + movie.getTitle() + " (genre: " + movie.getGenre() + ") a bien été ajouté à la liste.");
     }
