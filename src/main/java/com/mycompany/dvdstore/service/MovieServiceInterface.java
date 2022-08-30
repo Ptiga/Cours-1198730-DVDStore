@@ -4,5 +4,5 @@ import com.mycompany.dvdstore.entity.Movie;
 
 public interface MovieServiceInterface {
 
-    void registerService(Movie movie);
+    void registerMovie(Movie movie);
 }

@@ -8,6 +8,18 @@ import java.util.Scanner;
 
 public class MovieController implements MovieControllerInterface {
 
+    private MovieServiceInterface movieService;
+
+
+    public MovieServiceInterface getMovieService() {
+        return movieService;
+    }
+
+    public void setMovieService(MovieServiceInterface movieService) {
+        this.movieService = movieService;
+    }
+
+
     public void addUsingConsole(){
         Scanner lectureClavier = new Scanner(System.in);
 
@@ -19,8 +31,8 @@ public class MovieController implements MovieControllerInterface {
 
         Movie movie = new Movie(titreFilm, genreFilm);
 
-        MovieService movieService = new MovieService();
-        movieService.registerService(movie);
+        //MovieService movieService = new MovieService();
+        movieService.registerMovie(movie);
 
     }
 
