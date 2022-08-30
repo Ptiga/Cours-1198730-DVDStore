@@ -2,10 +2,11 @@ package com.mycompany.dvdstore.controller;
 
 import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.service.MovieService;
+import com.mycompany.dvdstore.service.MovieServiceInterface;
 
 import java.util.Scanner;
 
-public class MovieController {
+public class MovieController implements MovieControllerInterface {
 
     public void addUsingConsole(){
         Scanner lectureClavier = new Scanner(System.in);
@@ -22,4 +23,6 @@ public class MovieController {
         movieService.registerService(movie);
 
     }
+
+
 }

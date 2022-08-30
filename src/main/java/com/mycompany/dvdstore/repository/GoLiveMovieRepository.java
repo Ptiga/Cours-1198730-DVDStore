@@ -6,12 +6,13 @@ import com.sun.org.apache.bcel.internal.Const;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class GoLiveMovieRepository {
+public class GoLiveMovieRepository implements MovieRepositoryInterface {
 
     private final String databaseFolder = "C:\\temp\\";
     private final String databaseFile = "movies.txt";
 
-    public void addMovie(Movie movie){
+
+    public void add(Movie movie){
         writeIntoFile(movie);
         System.out.println("Le film " + movie.getTitle() + " (genre: " + movie.getGenre() + ") a bien été ajouté à la liste.");
     }
