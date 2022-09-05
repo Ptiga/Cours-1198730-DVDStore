@@ -6,7 +6,7 @@ import com.sun.org.apache.bcel.internal.Const;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class GoLiveMovieRepository implements MovieRepositoryInterface {
+public class FileMovieRepository implements MovieRepositoryInterface {
 
     private final String databaseFolder = "C:\\temp\\";
     private final String databaseFile = "movies.txt";
