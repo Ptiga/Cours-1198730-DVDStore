@@ -12,6 +12,8 @@
         <property name="movieRepository" ref="movieRepository"/>
     </bean>
 
-    <bean id="movieRepository" class="com.mycompany.dvdstore.repository.FileMovieRepository"/>
+    <bean id="movieRepository" class="com.mycompany.dvdstore.repository.FileMovieRepository">
+        <property name="file" value="C:\\temp\\movies.csv"/>
+    </bean>
 
 </beans>
