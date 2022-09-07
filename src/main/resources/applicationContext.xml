@@ -5,20 +5,15 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd
-">
+    http://www.springframework.org/schema/context/spring-context.xsd">
 
 
     <context:annotation-config/>
     <context:property-placeholder location="classpath:application.properties"/>
+    <context:component-scan base-package="com.mycompany.dvdstore.controller"/>
+    <context:component-scan base-package="com.mycompany.dvdstore.service"/>
+    <context:component-scan base-package="com.mycompany.dvdstore.repository.file"/>
 
-    <bean class="com.mycompany.dvdstore.controller.MovieController">
-    </bean>
 
-    <bean class="com.mycompany.dvdstore.service.DefaultMovieService">
-    </bean>
-
-    <bean class="com.mycompany.dvdstore.repository.FileMovieRepository">
-    </bean>
 
 </beans>
