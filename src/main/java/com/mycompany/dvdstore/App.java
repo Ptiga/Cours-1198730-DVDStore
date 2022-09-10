@@ -19,7 +19,7 @@ public class App
     {
 
         ApplicationContext applicationContext = SpringApplication.run(App.class);
-        MovieControllerInterface movieController = applicationContext.getBean(MovieControllerInterface.class);
+        MovieControllerInterface movieController = applicationContext.getBean(MovieControllerInterface.class, args);
 
         movieController.addUsingConsole();
     }
