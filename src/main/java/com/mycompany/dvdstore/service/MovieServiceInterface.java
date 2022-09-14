@@ -10,4 +10,5 @@ public interface MovieServiceInterface {
     void registerMovie(Movie movie);
     void setMovieRepository(MovieRepositoryInterface movieRepository);
     List<Movie> getMovieList();
+    Movie getMovieById(long id);
 }

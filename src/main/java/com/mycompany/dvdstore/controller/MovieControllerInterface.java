@@ -4,6 +4,6 @@ import com.mycompany.dvdstore.service.MovieServiceInterface;
 
 public interface MovieControllerInterface {
 
-    void addUsingConsole();
+    //void addUsingConsole();
     void setMovieService(MovieServiceInterface movieService);
 }
