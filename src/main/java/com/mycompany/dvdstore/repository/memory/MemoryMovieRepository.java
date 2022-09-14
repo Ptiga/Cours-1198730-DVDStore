@@ -12,12 +12,15 @@ import java.util.List;
 //@Repository
 public class MemoryMovieRepository implements MovieRepositoryInterface {
 
+    private static long lastId = 21;
+
     @Value("${File}")
     private File file;
 
     private static List<Movie> listeFilms = new ArrayList<>();
 
     public void add(Movie movie){
+        movie.setId(lastId+1);
         listeFilms.add(movie);
         System.out.println("Le film " + movie.getTitle() + " (genre: " + movie.getGenre() + ") a bien été ajouté à la liste.");
     }
@@ -40,6 +43,7 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
                 final String[] allProperties = line.split("\\;");
                 final long nextMovieId=Long.parseLong(allProperties[0]);
                 if (nextMovieId==id) {
+                    movie.setId(Long.parseLong(allProperties[0]));
                     movie.setTitle(allProperties[1]);
                     movie.setGenre(allProperties[2]);
                     movie.setDescription(allProperties[3]);
