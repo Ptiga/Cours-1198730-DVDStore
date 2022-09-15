@@ -11,7 +11,7 @@ public class Movie {
     public Movie() {
     }
 
-    //Classe copiée dans la partie web pour gérer les contrôles des formulaires
+
     public Movie(long id, String title, String genre, String description) {
         this.id = id;
         this.title = title;
