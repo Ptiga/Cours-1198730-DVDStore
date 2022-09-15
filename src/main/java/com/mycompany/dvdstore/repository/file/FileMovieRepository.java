@@ -17,11 +17,12 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     private File file;
 
 
-    public void add(Movie movie){
+    public Movie add(Movie movie){
         long lastId=list().stream().map(Movie::getId).max(Long::compare).orElse(0L);
         movie.setId(lastId+1);
         writeIntoFile(movie);
         System.out.println("Le film " + movie.getTitle() + " (genre: " + movie.getGenre() + ") a bien été ajouté à la liste.");
+        return movie;
     }
 
 

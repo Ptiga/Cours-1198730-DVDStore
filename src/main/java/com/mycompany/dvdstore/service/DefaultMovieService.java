@@ -25,8 +25,9 @@ public class DefaultMovieService implements MovieServiceInterface {
 
 //private GoLiveMovieRepository movieRepository = new GoLiveMovieRepository();
 
-    public void registerMovie(Movie movie){
+    public Movie registerMovie(Movie movie){
         movieRepository.add(movie);
+        return movie;
     }
 
     @Override
