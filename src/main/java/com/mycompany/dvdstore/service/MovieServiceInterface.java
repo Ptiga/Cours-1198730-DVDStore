@@ -9,6 +9,6 @@ public interface MovieServiceInterface {
 
     Movie registerMovie(Movie movie);
     void setMovieRepository(MovieRepositoryInterface movieRepository);
-    List<Movie> getMovieList();
-    Movie getMovieById(long id);
+    Iterable<Movie> getMovieList();
+    Movie getMovieById(Long id);
 }

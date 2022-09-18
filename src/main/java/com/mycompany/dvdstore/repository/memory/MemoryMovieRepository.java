@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 //@Repository
 public class MemoryMovieRepository implements MovieRepositoryInterface {
@@ -19,7 +20,7 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
 
     private static List<Movie> listeFilms = new ArrayList<>();
 
-    public Movie add(Movie movie){
+    public Movie save(Movie movie){
         movie.setId(lastId+1);
         listeFilms.add(movie);
         System.out.println("Le film " + movie.getTitle() + " (genre: " + movie.getGenre() + ") a bien été ajouté à la liste.");
@@ -27,15 +28,20 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
     }
 
     @Override
-    public List<Movie> list() {
-        Movie film1 = new Movie(1,"Sleepy Hollow", "Fantastique","");
-        Movie film2 = new Movie(2,"Pacific Rim", "Science-Fiction", "");
+    public Iterable<Movie> findAll() {
+        Movie film1 = new Movie(1L,"Sleepy Hollow", "Fantastique","");
+        Movie film2 = new Movie(2L,"Pacific Rim", "Science-Fiction", "");
         List<Movie>movies=List.of(film1, film2);
         return movies;
     }
 
     @Override
-    public Movie getById(long id) {
+    public Optional<Movie> findById(Long id) {
+        List<Movie>movies = (List<Movie>) findAll();
+        return movies.stream().
+                filter(m -> m.getId()==id).
+                findFirst();
+        /*
         final Movie movie = new Movie();
         movie.setId(id);
         try(BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -63,5 +69,52 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
         movie.setGenre("UNKNOWN");
         movie.setDescription("UNKNOWN");
         return movie;
+         */
+    }
+
+
+    @Override
+    public Iterable<Movie> findAllById(Iterable<Long> longs) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public long count() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteById(Long aLong) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void delete(Movie entity) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteAllById(Iterable<? extends Long> longs) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Movie> entities) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void deleteAll() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public <S extends Movie> Iterable<S> saveAll(Iterable<S> entities) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean existsById(Long aLong) {
+        return false;
     }
 }

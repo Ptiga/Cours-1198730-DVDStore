@@ -26,23 +26,22 @@ public class DefaultMovieService implements MovieServiceInterface {
 //private GoLiveMovieRepository movieRepository = new GoLiveMovieRepository();
 
     public Movie registerMovie(Movie movie){
-        movieRepository.add(movie);
+        movieRepository.save(movie);
         return movie;
     }
 
     @Override
-    public List<Movie> getMovieList() {
-        return movieRepository.list();
+    public Iterable<Movie> getMovieList() {
+        return movieRepository.findAll();
     }
 
     @Override
-    public Movie getMovieById(long id) {
+    public Movie getMovieById(Long id) {
         /*
         return getMovieList().stream().
                 filter(m -> m.getId()==id).
                 findFirst().get();
-
          */
-        return movieRepository.getById(id);
+        return movieRepository.findById(id).orElseThrow();
     }
 }

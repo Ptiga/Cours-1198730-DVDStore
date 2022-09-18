@@ -1,8 +1,11 @@
 package com.mycompany.dvdstore.entity;
 
+import org.springframework.data.annotation.Id;
+
 public class Movie {
 
-    private long id;
+    @Id
+    private Long id;
     private String title;
     private String genre;
     private String description;
@@ -12,14 +15,14 @@ public class Movie {
     }
 
 
-    public Movie(long id, String title, String genre) {
+    public Movie(Long id, String title, String genre) {
         this.id = id;
         this.title = title;
         this.genre = genre;
     }
 
 
-    public Movie(long id, String title, String genre, String description) {
+    public Movie(Long id, String title, String genre, String description) {
         this.id = id;
         this.title = title;
         this.genre = genre;
@@ -27,11 +30,11 @@ public class Movie {
     }
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

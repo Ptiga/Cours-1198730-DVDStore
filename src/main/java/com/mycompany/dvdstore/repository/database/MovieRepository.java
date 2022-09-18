@@ -1,5 +1,5 @@
 package com.mycompany.dvdstore.repository.database;
-
+/*
 import com.mycompany.dvdstore.entity.Movie;
 import com.mycompany.dvdstore.repository.MovieRepositoryInterface;
 import org.hibernate.tool.schema.internal.exec.JdbcContext;
@@ -65,3 +65,4 @@ public class MovieRepository implements MovieRepositoryInterface {
                 ));
     }
 }
+*/
