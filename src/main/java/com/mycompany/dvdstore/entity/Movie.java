@@ -12,6 +12,13 @@ public class Movie {
     }
 
 
+    public Movie(long id, String title, String genre) {
+        this.id = id;
+        this.title = title;
+        this.genre = genre;
+    }
+
+
     public Movie(long id, String title, String genre, String description) {
         this.id = id;
         this.title = title;
@@ -50,5 +57,14 @@ public class Movie {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Film: " + '\n' +
+                "- ID : " + id + '\n' +
+                "- Titre : " + title + '\n' +
+                "- Genre : " + genre + '\n' +
+                "- Description : " + description + '\n';
     }
 }

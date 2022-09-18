@@ -37,8 +37,12 @@ public class DefaultMovieService implements MovieServiceInterface {
 
     @Override
     public Movie getMovieById(long id) {
+        /*
         return getMovieList().stream().
                 filter(m -> m.getId()==id).
                 findFirst().get();
+
+         */
+        return movieRepository.getById(id);
     }
 }
