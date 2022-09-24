@@ -45,6 +45,8 @@ public class DefaultMovieService implements MovieServiceInterface {
                 findFirst().get();
          */
         //return movieRepository.findById(id).orElseThrow();
+        /*
+        //Version qui fait des requêtes pour obtenir les éléments suplémentaires
         Optional<Movie> optionalMovie=movieRepository.findById(id);
         if (optionalMovie.isEmpty()){
             throw new NoSuchElementException();
@@ -57,5 +59,18 @@ public class DefaultMovieService implements MovieServiceInterface {
             review.setMovie(null);
         });
         return movie;
+         */
+        Optional<Movie> optionalMovie=movieRepository.findById(id);
+        if (optionalMovie.isEmpty()){
+            throw new NoSuchElementException();
+        }
+        Movie movie=optionalMovie.get();
+
+        movie.getReviews().forEach(review ->
+                review.setMovie(null)
+        );
+
+        return movie;
+    
     }
 }
