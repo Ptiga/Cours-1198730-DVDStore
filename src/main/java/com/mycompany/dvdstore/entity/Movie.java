@@ -1,10 +1,7 @@
 package com.mycompany.dvdstore.entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Movie {
@@ -15,6 +12,8 @@ public class Movie {
     private String title;
     private String genre;
     private String description;
+    //@JoinColumn(name = "id_actor", nullable = false)
+    //private Actor mainActor;
 
 
     public Movie() {
