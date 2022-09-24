@@ -29,10 +29,13 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
 
     @Override
     public Iterable<Movie> findAll() {
+        /*
         Movie film1 = new Movie(1L,"Sleepy Hollow", "Fantastique","");
         Movie film2 = new Movie(2L,"Pacific Rim", "Science-Fiction", "");
         List<Movie>movies=List.of(film1, film2);
         return movies;
+        */
+        throw new UnsupportedOperationException();
     }
 
     @Override

@@ -1,11 +1,7 @@
-/*
 package com.mycompany.dvdstore.entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Actor {
@@ -13,24 +9,17 @@ public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false,length = 20)
     private String firstName;
+    @Column(length = 20)
     private String lastName;
 
-
-    public Actor() {
-    }
-
-    public Actor(Long id, String firstName, String lastName) {
-        this.id = id;
+    public Actor(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Actor(Long id, String firstName) {
-        this.id = id;
-        this.firstName = firstName;
-    }
-
+    public Actor(){}
 
     public Long getId() {
         return id;
@@ -56,4 +45,3 @@ public class Actor {
         this.lastName = lastName;
     }
 }
- */
